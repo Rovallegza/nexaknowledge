@@ -1,6 +1,6 @@
 # NexaKnowledge · Prototipo de gestión del conocimiento
 
-**🔗 Prototipo en línea:** _(pegar aquí la URL de Streamlit Cloud tras el despliegue)_
+**🔗 Prototipo en línea:** https://nexaknowledge.streamlit.app
 
 **Organización ficticia:** NexaSoft Solutions (desarrollo de software, DevOps, infraestructura, seguridad, analítica y soporte).
 

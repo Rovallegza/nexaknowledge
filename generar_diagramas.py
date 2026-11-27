@@ -101,33 +101,109 @@ ontology=r'''digraph ontology {
 subprocess.run(['dot','-Tpng','-Gdpi=180',str(RES/'ontologia.dot'),'-o',str(RES/'ontologia.png')],check=True)
 subprocess.run(['dot','-Tsvg',str(RES/'ontologia.dot'),'-o',str(RES/'ontologia.svg')],check=True)
 
-fig, ax=plt.subplots(figsize=(15,5.9)); fig.patch.set_facecolor('white'); ax.set_facecolor('white'); ax.axis('off')
-ax.set_xlim(-.15,15.15); ax.set_ylim(0,6)
-ax.text(0,5.6,'ARQUITECTURA DEL PROTOTIPO',fontweight='bold',fontsize=20,color=NAVY,va='top')
-ax.text(0,5.07,'Dos flujos de inteligencia artificial con un corpus documental compartido',fontsize=11,color=GRAY,va='top')
+W = 15.3                      # ancho de las bandas
+XS = [0.40, 3.37, 6.34, 9.31, 12.28]   # columnas de los cinco servicios
+AN = 2.62                     # ancho de cada columna
+CEN = [x + AN / 2 for x in XS]
 
-def box(x,y,w,h,title,sub,color='#EDF5FA'):
- ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=.1,rounding_size=.16',facecolor=color,edgecolor='#B3D1DD',linewidth=1.2))
- ax.text(x+w/2,y+h*.63,title,ha='center',va='center',color=NAVY,fontsize=12.2,fontweight='bold')
- ax.text(x+w/2,y+h*.30,sub,ha='center',va='center',color=TEXT,fontsize=9.5)
+fig, ax = plt.subplots(figsize=(16, 10.8))
+fig.patch.set_facecolor('white'); ax.set_facecolor('white'); ax.axis('off')
+ax.set_xlim(-.2, 16.6); ax.set_ylim(-.1, 10.9)
 
-def arrow(x1,y1,x2,y2):
- ax.add_patch(FancyArrowPatch((x1,y1),(x2,y2),arrowstyle='-|>',mutation_scale=15,color=TEAL,linewidth=2))
+ax.text(0, 10.8, 'ARQUITECTURA DEL PROTOTIPO', fontweight='bold', fontsize=21, color=NAVY, va='top')
+ax.text(0, 10.26, 'NexaKnowledge  |  Repositorio, procesamiento, control de acceso, interfaz y salidas',
+        fontsize=11.5, color=GRAY, va='top')
 
-ax.text(0,4.35,'A  |  RECUPERACIÓN SEMÁNTICA BÁSICA',fontsize=11.6,fontweight='bold',color=TEAL)
-items=[('Consulta','Lenguaje natural'),('Ontología','Sinónimos conocidos'),('Vectorización','TF-IDF'),('Comparación','Coseno'),('Resultados','Ranking + puntaje')]
-xs=[0,3.15,6.3,9.45,12.6]
-for i,(t,s) in enumerate(items):
- box(xs[i],3.12,2.35,.88,t,s)
- if i<4: arrow(xs[i]+2.42,3.55,xs[i+1]-.12,3.55)
-ax.text(0,2.45,'B  |  CLASIFICACIÓN AUTOMÁTICA',fontsize=11.6,fontweight='bold',color=TEAL)
-items2=[('Documento nuevo','Contenido libre'),('Preparación','Texto y TF-IDF'),('Modelo de IA','Regresión logística'),('Predicción','Tipo + confianza')]
-xs2=[0,3.75,7.5,11.25]
-for i,(t,s) in enumerate(items2):
- box(xs2[i],1.16,3.02,.9,t,s,color='#F4F7FB')
- if i<3: arrow(xs2[i]+3.08,1.61,xs2[i+1]-.12,1.61)
-ax.text(0,.38,'Ambos flujos usan los documentos ficticios; la búsqueda incorpora título, contenido y conceptos.',
-       fontsize=10.2,color=GRAY)
-fig.savefig(RES/'arquitectura.png',dpi=190,bbox_inches='tight',pad_inches=.2)
+
+def rotulo(y, texto, color=TEAL):
+    ax.text(0.28, y, texto, fontsize=10.4, fontweight='bold', color=color, va='center', zorder=5)
+
+
+def banda(y, h, color='#F6FAFC', borde='#DCE7EE'):
+    ax.add_patch(FancyBboxPatch((0, y), W, h, boxstyle='round,pad=.04,rounding_size=.12',
+                                facecolor=color, edgecolor=borde, linewidth=1.1, zorder=1))
+
+
+def caja(x, y, w, h, title, sub, color='#EDF5FA', borde='#B3D1DD'):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle='round,pad=.07,rounding_size=.15',
+                                facecolor=color, edgecolor=borde, linewidth=1.3, zorder=3))
+    ax.text(x + w / 2, y + h * .66, title, ha='center', va='center',
+            color=NAVY, fontsize=11.5, fontweight='bold', zorder=4)
+    ax.text(x + w / 2, y + h * .27, sub, ha='center', va='center',
+            color=TEXT, fontsize=9.1, linespacing=1.4, zorder=4)
+
+
+def flecha(x, y1, y2, color=TEAL, lw=2.0):
+    ax.add_patch(FancyArrowPatch((x, y1), (x, y2), arrowstyle='-|>', mutation_scale=14,
+                                 color=color, linewidth=lw, zorder=2))
+
+
+# 1 · REPOSITORIO DE DATOS
+banda(8.50, 1.05)
+rotulo(9.42, '1  |  REPOSITORIO DE DATOS')
+caja(0.80, 8.62, 6.30, .62, 'datos/documentos.json', '67 documentos  ·  60 abiertos y 7 reservados')
+caja(8.20, 8.62, 6.30, .62, 'datos/ontologia.json', '36 conceptos  ·  sinónimos y 10 relaciones')
+flecha(3.95, 8.45, 7.95); flecha(11.35, 8.45, 7.95)
+
+# 2 · PROCESAMIENTO
+banda(6.85, 1.05)
+rotulo(7.77, '2  |  COMPONENTES DE PROCESAMIENTO')
+caja(0.80, 6.97, 6.30, .62, 'Vectorizador TF-IDF', 'unigramas y bigramas  ·  matriz 67 × V')
+caja(8.20, 6.97, 6.30, .62, 'LogisticRegression', 'clasificador supervisado de seis tipos')
+flecha(3.95, 6.80, 6.33); flecha(11.35, 6.80, 6.33)
+
+# 3 · CONTROL DE ACCESO
+ax.add_patch(FancyBboxPatch((0, 5.40), W, .88, boxstyle='round,pad=.04,rounding_size=.12',
+                            facecolor=TEAL, edgecolor='#0A6E7A', linewidth=1.2, zorder=3))
+rotulo(6.12, '3  |  CONTROL DE ACCESO', color='#C2EEF3')
+ax.text(W / 2, 5.70, '_es_accesible(doc, permitir_confidenciales)   ·   filtro obligatorio previo a toda entrega',
+        ha='center', va='center', color='white', fontsize=11.6, fontweight='bold', zorder=4)
+for c in CEN:
+    flecha(c, 5.35, 4.90, color='#8FB0BF')
+
+# 4 · SERVICIOS DEL MOTOR
+banda(3.30, 1.55)
+rotulo(4.70, '4  |  SERVICIOS DEL MOTOR  (motor.py)')
+servicios = [
+    ('Búsqueda', 'TF-IDF y coseno\nexpansión ontológica'),
+    ('Clasificación', 'probabilidad\nestimada por tipo'),
+    ('Chatbot', 'recuperación y\nredacción extractiva'),
+    ('Recomendación', 'por documento\ny por historial'),
+    ('Grafo', 'subgrafo dirigido\ncon NetworkX'),
+]
+for x, (t, s) in zip(XS, servicios):
+    caja(x, 3.44, AN, 1.08, t, s)
+for c in CEN:
+    flecha(c, 3.25, 2.88, color='#8FB0BF')
+
+# 5 · INTERFAZ
+ax.add_patch(FancyBboxPatch((0, 1.95), W, .88, boxstyle='round,pad=.04,rounding_size=.12',
+                            facecolor=NAVY, edgecolor='#0A1826', linewidth=1.2, zorder=3))
+rotulo(2.67, '5  |  INTERFAZ DE INTERACCIÓN', color='#75D7E1')
+ax.text(W / 2, 2.25, 'Streamlit  ·  seis pestañas sincronizadas por st.session_state  ·  nexaknowledge.streamlit.app',
+        ha='center', va='center', color='white', fontsize=11.4, fontweight='bold', zorder=4)
+for c in CEN:
+    flecha(c, 1.90, 1.70, color='#8FB0BF')
+
+# 6 · SALIDAS
+banda(0.30, 1.35, color='#FFFCF6', borde='#EEDDC2')
+rotulo(1.50, '6  |  SALIDAS AL USUARIO', color='#B07A32')
+salidas = [
+    ('Ranking', 'documentos ordenados\npor similitud'),
+    ('Tipo propuesto', 'categoría con\nprobabilidad'),
+    ('Respuesta', 'texto redactado\ny fuentes citadas'),
+    ('Sugerencias', 'documentos afines\ncon motivo'),
+    ('Red visual', 'nodos, aristas\ny tabla de relaciones'),
+]
+for x, (t, s) in zip(XS, salidas):
+    caja(x, 0.44, AN, .88, t, s, color='#FFF8EC', borde='#E8CFA3')
+
+# retroalimentación: un documento incorporado en sesión vuelve al repositorio
+ax.add_patch(FancyArrowPatch((15.52, 0.90), (15.52, 8.95), arrowstyle='-|>', mutation_scale=14,
+                             color='#C2894A', linewidth=1.8, linestyle=(0, (5, 3)), zorder=2))
+ax.text(16.02, 4.9, 'documento incorporado en sesión  →  reindexado', rotation=270,
+        ha='center', va='center', fontsize=9.2, color='#9A6B33', zorder=4)
+
+fig.savefig(RES/'arquitectura.png',dpi=175,bbox_inches='tight',pad_inches=.2)
 plt.close(fig)
 print('Figuras creadas:',*[p.name for p in RES.glob('*.png')])

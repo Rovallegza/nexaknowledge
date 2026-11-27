@@ -1018,5 +1018,131 @@
     "estado": "Vigente",
     "fecha_actualizacion": "2026-10-11",
     "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0701",
+    "titulo": "Confidencial: Llaves maestras y secretos de producción API",
+    "tipo": "Documentación técnica",
+    "area": "Desarrollo",
+    "conceptos": [
+      "credenciales",
+      "api",
+      "seguridad",
+      "accesos"
+    ],
+    "contenido": "Registro interno restringido con tokens de acceso maestro, llaves privadas de firma JWT y credenciales de integración con pasarelas externas de NexaSoft Solutions. Prohibida su divulgación fuera del equipo líder de arquitectura.",
+    "version": "1.0",
+    "estado": "Restringido",
+    "fecha_actualizacion": "2026-11-15",
+    "origen": "Sintético - Confidencial",
+    "confidencial": true
+  },
+  {
+    "id": "NX-0702",
+    "titulo": "Confidencial: Certificados raíz y accesos SSH a clústeres",
+    "tipo": "Procedimiento",
+    "area": "DevOps",
+    "conceptos": [
+      "despliegue",
+      "credenciales",
+      "seguridad",
+      "servidor"
+    ],
+    "contenido": "Procedimiento restringido para rotación de llaves SSH de root, certificados TLS internos y tokens del runner de despliegue continuo en entornos críticos de producción.",
+    "version": "1.0",
+    "estado": "Restringido",
+    "fecha_actualizacion": "2026-11-15",
+    "origen": "Sintético - Confidencial",
+    "confidencial": true
+  },
+  {
+    "id": "NX-0703",
+    "titulo": "Confidencial: Topología privada de red y bóveda de respaldos",
+    "tipo": "Manual",
+    "area": "Infraestructura",
+    "conceptos": [
+      "respaldo",
+      "recuperación",
+      "servidor",
+      "seguridad"
+    ],
+    "contenido": "Inventario confidencial de direcciones IP privadas, rutas de bóvedas aisladas de respaldo en frío y llaves de descifrado para recuperación ante desastres de nivel crítico.",
+    "version": "1.0",
+    "estado": "Restringido",
+    "fecha_actualizacion": "2026-11-15",
+    "origen": "Sintético - Confidencial",
+    "confidencial": true
+  },
+  {
+    "id": "NX-0704",
+    "titulo": "Confidencial: Reporte de vulnerabilidades críticas sin parchar",
+    "tipo": "Informe",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "seguridad",
+      "auditoría",
+      "privacidad",
+      "incidentes"
+    ],
+    "contenido": "Informe ejecutivo clasificado sobre hallazgos de pruebas de penetración interna, vectores de explotación activos pendientes de remediación y registros de auditoría forense.",
+    "version": "1.0",
+    "estado": "Restringido",
+    "fecha_actualizacion": "2026-11-15",
+    "origen": "Sintético - Confidencial",
+    "confidencial": true
+  },
+  {
+    "id": "NX-0705",
+    "titulo": "Confidencial: Nómina ejecutiva y métricas financieras internas",
+    "tipo": "Informe",
+    "area": "Analítica de Datos",
+    "conceptos": [
+      "datos",
+      "privacidad",
+      "cumplimiento",
+      "indicadores"
+    ],
+    "contenido": "Conjunto de datos sensibles con tabuladores salariales directivos, márgenes netos por cliente B2B y proyecciones financieras no públicas de NexaSoft Solutions.",
+    "version": "1.0",
+    "estado": "Restringido",
+    "fecha_actualizacion": "2026-11-15",
+    "origen": "Sintético - Confidencial",
+    "confidencial": true
+  },
+  {
+    "id": "NX-0706",
+    "titulo": "Confidencial: Bitácora de incidentes con exposición de datos",
+    "tipo": "Lección aprendida",
+    "area": "Soporte",
+    "conceptos": [
+      "incidentes",
+      "privacidad",
+      "escalamiento",
+      "datos"
+    ],
+    "contenido": "Registro interno confidencial de tickets críticos que involucraron datos personales de clientes, acuerdos legales de confidencialidad y protocolos de contención directiva.",
+    "version": "1.0",
+    "estado": "Restringido",
+    "fecha_actualizacion": "2026-11-15",
+    "origen": "Sintético - Confidencial",
+    "confidencial": true
+  },
+  {
+    "id": "NX-0707",
+    "titulo": "Confidencial: Presupuestos estratégicos y fusiones pendientes",
+    "tipo": "Política",
+    "area": "Gestión de Proyectos",
+    "conceptos": [
+      "cumplimiento",
+      "privacidad",
+      "datos",
+      "seguridad"
+    ],
+    "contenido": "Directriz reservada para el comité directivo sobre asignación presupuestal confidencial, evaluación de adquisiciones tecnológicas y cláusulas de reserva contractual.",
+    "version": "1.0",
+    "estado": "Restringido",
+    "fecha_actualizacion": "2026-11-15",
+    "origen": "Sintético - Confidencial",
+    "confidencial": true
   }
 ]

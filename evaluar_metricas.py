@@ -27,8 +27,12 @@ def evaluar_busqueda(sistema: SistemaConocimiento, k: int = 5, expansion: bool =
     precisions, recalls = [], []
     detalle = []
 
+    # El universo de documentos relevantes excluye los restringidos, porque la
+    # búsqueda tampoco puede devolverlos sin autorización.
+    accesibles = [d for d in sistema.documentos if not d.get("confidencial", False)]
+
     for consulta, esperados in CASOS_CONSULTA:
-        relevantes_totales = [d for d in sistema.documentos if es_relevante_consulta(d, esperados)]
+        relevantes_totales = [d for d in accesibles if es_relevante_consulta(d, esperados)]
         recuperados = sistema.buscar(consulta, limite=k, expansion=expansion)
         aciertos = sum(1 for d in recuperados if es_relevante_consulta(d, esperados))
 
@@ -58,10 +62,14 @@ def evaluar_busqueda(sistema: SistemaConocimiento, k: int = 5, expansion: bool =
 def evaluar_recomendacion_documento(sistema: SistemaConocimiento, k: int = 4) -> dict:
     precisions, recalls = [], []
 
-    for doc_base in sistema.documentos:
+    # Se evalúa el recomendador tal como lo usa un colaborador sin autorización
+    # especial: los documentos restringidos no son base ni candidatos válidos.
+    accesibles = [d for d in sistema.documentos if not d.get("confidencial", False)]
+
+    for doc_base in accesibles:
         conceptos_base = set(doc_base.get("conceptos", []))
         relevantes_posibles = [
-            d for d in sistema.documentos
+            d for d in accesibles
             if d["id"] != doc_base["id"] and (
                 bool(conceptos_base & set(d.get("conceptos", [])))
                 or d["area"] == doc_base["area"]
@@ -80,8 +88,47 @@ def evaluar_recomendacion_documento(sistema: SistemaConocimiento, k: int = 4) ->
     return {
         "k": k,
         "n_documentos": len(sistema.documentos),
+        "n_evaluados": len(accesibles),
+        "n_restringidos": len(sistema.documentos) - len(accesibles),
         "precision_media": round(sum(precisions) / len(precisions), 4),
         "recall_media": round(sum(recalls) / len(recalls), 4),
+    }
+
+
+CONSULTAS_SENSIBLES = [
+    "llaves maestras y tokens de acceso de producción",
+    "certificados raíz y accesos SSH a clústeres",
+    "direcciones IP privadas y bóveda de respaldos",
+    "vulnerabilidades críticas sin parchar y pruebas de penetración",
+    "tabuladores salariales y proyecciones financieras",
+    "tickets con exposición de datos personales de clientes",
+    "presupuestos estratégicos y adquisiciones pendientes",
+]
+
+
+def evaluar_control_acceso(sistema: SistemaConocimiento, k: int = 5) -> dict:
+    """Comprueba que ningún documento restringido se filtre sin autorización."""
+    fugas, recuperables = [], 0
+
+    for consulta in CONSULTAS_SENSIBLES:
+        sin_permiso = sistema.buscar(consulta, limite=k)
+        fugas += [d["id"] for d in sin_permiso if d.get("confidencial", False)]
+
+        respuesta = sistema.responder_chatbot(consulta, limite_fuentes=k)
+        fugas += [f["id"] for f in respuesta["fuentes"] if f.get("confidencial", False)]
+        for doc in sistema.documentos:
+            if doc.get("confidencial", False) and doc["titulo"] in respuesta["respuesta"]:
+                fugas.append(doc["id"])
+
+        con_permiso = sistema.buscar(consulta, limite=k, permitir_confidenciales=True)
+        if any(d.get("confidencial", False) for d in con_permiso):
+            recuperables += 1
+
+    return {
+        "consultas_probadas": len(CONSULTAS_SENSIBLES),
+        "fugas_detectadas": len(fugas),
+        "ids_filtrados": sorted(set(fugas)),
+        "recuperables_con_autorizacion": recuperables,
     }
 
 
@@ -90,9 +137,11 @@ if __name__ == "__main__":
     con_exp = evaluar_busqueda(s, k=5, expansion=True)
     sin_exp = evaluar_busqueda(s, k=5, expansion=False)
     rec_eval = evaluar_recomendacion_documento(s, k=4)
+    acceso = evaluar_control_acceso(s, k=5)
 
     print("Búsqueda CON expansión ontológica:", con_exp["precision_media"], con_exp["recall_media"])
     print("Búsqueda SIN expansión ontológica:", sin_exp["precision_media"], sin_exp["recall_media"])
     print("Recomendación por documento (top-4):", rec_eval)
+    print("Control de acceso:", acceso)
     for fila in con_exp["detalle"]:
         print(" ", fila)

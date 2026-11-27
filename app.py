@@ -57,6 +57,9 @@ def construir_subgrafo(area_filtro: str, tipo_filtro: str, concepto_filtro: str,
     grafo = nx.MultiDiGraph()
     docs_filtrados = []
     for d in sistema.documentos:
+        # Los documentos restringidos no se representan como nodos en la red visual.
+        if d.get('confidencial', False):
+            continue
         if area_filtro != 'Todas' and d['area'] != area_filtro:
             continue
         if tipo_filtro != 'Todos' and d['tipo'] != tipo_filtro:
@@ -68,7 +71,8 @@ def construir_subgrafo(area_filtro: str, tipo_filtro: str, concepto_filtro: str,
     # Limitar a 10 documentos visibles para mantener el grafo legible
     docs_visibles = docs_filtrados[:10]
     if doc_foco_id:
-        foco_obj = next((d for d in sistema.documentos if d['id'] == doc_foco_id), None)
+        foco_obj = next((d for d in sistema.documentos
+                         if d['id'] == doc_foco_id and not d.get('confidencial', False)), None)
         if foco_obj and all(d['id'] != foco_obj['id'] for d in docs_visibles):
             docs_visibles = [foco_obj, *docs_visibles[:9]]
 
@@ -287,7 +291,8 @@ with rec_tab:
         st.info('Realiza alguna búsqueda o pregunta en el chatbot para activar recomendaciones por historial.')
 
     st.markdown('#### 2. Por similitud con un documento base')
-    opciones_docs = {f"{d['id']} — {d['titulo']} ({d['tipo']})": d['id'] for d in sistema.documentos}
+    opciones_docs = {f"{d['id']} — {d['titulo']} ({d['tipo']})": d['id']
+                     for d in sistema.documentos if not d.get('confidencial', False)}
     if 'rec_doc_sel' not in st.session_state or st.session_state.rec_doc_sel not in opciones_docs:
         default_rec = next(
             (k for k, v in opciones_docs.items() if v == st.session_state.doc_foco_id),
@@ -314,6 +319,11 @@ with clasificar_tab:
         placeholder='Pega el texto del nuevo documento para predecir su categoría documental.',
     )
     area = st.selectbox('Área que lo genera', sorted(stats['areas']))
+    marcar_confidencial = st.checkbox(
+        'Marcar como documento confidencial (restringido)',
+        help='Si lo marcas, el documento queda fuera de la búsqueda, el chatbot, '
+             'las recomendaciones y el grafo en cuanto se agregue.',
+    )
 
     if contenido.strip():
         pred = sistema.clasificar(contenido)
@@ -334,12 +344,20 @@ with clasificar_tab:
                 c for c in sistema.ontologia.get('conceptos', [])
                 if normalizar(c) in normalizar(contenido)
             ]
-            doc = sistema.incorporar(titulo, contenido, area, conceptos[:12])
-            seleccionar_documento_foco(doc['id'])
-            st.success(
-                f'Se agregó {doc["id"]} como {doc["tipo"]}; disponible en búsqueda, '
-                'recomendaciones y grafo durante esta sesión.'
-            )
+            doc = sistema.incorporar(titulo, contenido, area, conceptos[:12],
+                                     confidencial=marcar_confidencial)
+            if doc.get('confidencial'):
+                st.warning(
+                    f'Se agregó {doc["id"]} como {doc["tipo"]} con estado **Restringido**. '
+                    'Queda excluido de la búsqueda, el chatbot, las recomendaciones y el grafo. '
+                    'Compruébalo buscando su contenido en la pestaña 🔎 Búsqueda.'
+                )
+            else:
+                seleccionar_documento_foco(doc['id'])
+                st.success(
+                    f'Se agregó {doc["id"]} como {doc["tipo"]}: disponible en búsqueda, '
+                    'recomendaciones y grafo durante esta sesión.'
+                )
     else:
         st.info('Introduce contenido para ver la predicción del clasificador supervisado.')
 
@@ -356,7 +374,8 @@ with grafo_tab:
         conceptos_todos = sorted({c for d in sistema.documentos for c in d.get('conceptos', [])})
         conc_g = st.selectbox('Filtrar por concepto', ['Todos', *conceptos_todos], key='g_conc')
 
-    mapa_docs = {f"{d['id']} — {d['titulo']}": d['id'] for d in sistema.documentos}
+    mapa_docs = {f"{d['id']} — {d['titulo']}": d['id']
+                 for d in sistema.documentos if not d.get('confidencial', False)}
     if 'g_foco' not in st.session_state or st.session_state.g_foco not in mapa_docs:
         default_g = next(
             (k for k, v in mapa_docs.items() if v == st.session_state.doc_foco_id),
@@ -387,7 +406,12 @@ with catalogo_tab:
           'Área': d['area'], 'Estado': d['estado']} for d in docs],
         hide_index=True, use_container_width=True, height=340,
     )
-    st.caption('Documentos ficticios creados para validar la arquitectura.')
+    n_restringidos = sum(1 for d in sistema.documentos if d.get('confidencial', False))
+    st.caption(
+        f'Documentos ficticios creados para validar la arquitectura. '
+        f'{n_restringidos} figuran con estado **Restringido**: el inventario los reconoce, '
+        'pero quedan fuera de la búsqueda, el chatbot, las recomendaciones y el grafo.'
+    )
 
     st.markdown('### Diagramas conceptuales del proyecto')
     d_col1, d_col2 = st.columns(2)

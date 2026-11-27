@@ -3,7 +3,7 @@
   "clases": ["Organización", "Área", "Proyecto", "Persona", "Documento", "TipoDocumento", "Concepto", "Versión"],
   "tipos_documento": ["Manual", "Informe", "Política", "Documentación técnica", "Procedimiento", "Lección aprendida"],
   "areas": ["Desarrollo", "DevOps", "Infraestructura", "Ciberseguridad", "Analítica de Datos", "Soporte", "Gestión de Proyectos"],
-  "conceptos": ["seguridad", "autenticación", "credenciales", "accesos", "respaldo", "recuperación", "continuidad", "datos", "api", "integración", "desarrollo", "devops", "despliegue", "pruebas", "automatización", "incidentes", "soporte", "sla", "monitoreo", "indicadores", "calidad", "analítica", "privacidad", "cumplimiento", "git", "versionado", "alertas", "infraestructura", "disponibilidad", "agilidad", "proyectos", "colaboración", "mejora"],
+  "conceptos": ["seguridad", "autenticación", "credenciales", "accesos", "respaldo", "recuperación", "continuidad", "datos", "api", "integración", "desarrollo", "devops", "despliegue", "pruebas", "automatización", "incidentes", "soporte", "sla", "monitoreo", "indicadores", "calidad", "analítica", "privacidad", "cumplimiento", "git", "versionado", "alertas", "infraestructura", "disponibilidad", "agilidad", "proyectos", "colaboración", "mejora", "servidor", "auditoría", "escalamiento"],
   "relaciones": {
     "tieneArea": "Organización → Área",
     "desarrolla": "Área → Proyecto",
@@ -28,6 +28,9 @@
     "privacidad": ["datos personales", "protección de datos", "información sensible"],
     "git": ["repositorio", "control de versiones", "pull request"],
     "monitoreo": ["alertas", "logs", "observabilidad", "vigilar servidores"],
-    "agilidad": ["scrum", "sprint", "kanban", "retrospectiva"]
+    "agilidad": ["scrum", "sprint", "kanban", "retrospectiva"],
+    "servidor": ["host", "nodo", "clúster", "máquina", "instancia"],
+    "auditoría": ["revisión", "hallazgos", "evidencia", "trazabilidad", "forense"],
+    "escalamiento": ["escalar", "nivel 2", "prioridad alta", "derivación"]
   }
 }

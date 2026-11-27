@@ -92,8 +92,14 @@ class SistemaConocimiento:
         # No modifica la consulta literal; adjunta únicamente términos conocidos.
         return consulta + (' ' + ' '.join(nuevos) if nuevos else '')
 
+    def _es_accesible(self, doc: dict, permitir_confidenciales: bool = False) -> bool:
+        """Control de acceso: un documento restringido solo se expone con autorización."""
+        if doc.get('confidencial', False) and not permitir_confidenciales:
+            return False
+        return True
+
     def buscar(self, consulta: str, limite: int = 5, tipo: str | None = None,
-               expansion: bool = True) -> list[dict]:
+               expansion: bool = True, permitir_confidenciales: bool = False) -> list[dict]:
         if not consulta or not consulta.strip():
             return []
         if limite < 1:
@@ -105,6 +111,8 @@ class SistemaConocimiento:
         resultados = []
         for i, score in ordenados:
             doc = self.documentos[i]
+            if not self._es_accesible(doc, permitir_confidenciales):
+                continue
             if tipo is not None and doc['tipo'] != tipo:
                 continue
             if score <= 1e-12:  # jamás mostrar elementos sin coincidencia como «relevantes»
@@ -129,7 +137,8 @@ class SistemaConocimiento:
         }
 
     def incorporar(self, titulo: str, contenido: str, area: str,
-                   conceptos: list[str] | None = None) -> dict:
+                   conceptos: list[str] | None = None,
+                   confidencial: bool = False) -> dict:
         if not titulo.strip() or not contenido.strip() or not area.strip():
             raise ValueError('Título, contenido y área son obligatorios.')
         resultado = self.clasificar(contenido)
@@ -141,9 +150,11 @@ class SistemaConocimiento:
             'area': area.strip(),
             'conceptos': conceptos or [],
             'contenido': contenido.strip(),
-            'version': '1.0', 'estado': 'Pendiente de revisión',
+            'version': '1.0',
+            'estado': 'Restringido' if confidencial else 'Pendiente de revisión',
             'fecha_actualizacion': 'No asignada',
-            'origen': 'Añadido durante la ejecución; no aprobado por experto'
+            'origen': 'Añadido durante la ejecución; no aprobado por experto',
+            'confidencial': bool(confidencial),
         }
         self.documentos.append(doc)
         self.entrenar()
@@ -185,7 +196,8 @@ class SistemaConocimiento:
             razones.append(f"mismo tipo ({doc_cand.get('tipo')})")
         return ' · '.join(razones)
 
-    def recomendar_por_documento(self, doc_id: str, limite: int = 4) -> list[dict]:
+    def recomendar_por_documento(self, doc_id: str, limite: int = 4,
+                                 permitir_confidenciales: bool = False) -> list[dict]:
         """Recomienda documentos similares a un documento dado."""
         if limite < 1:
             raise ValueError('limite debe ser positivo.')
@@ -194,6 +206,13 @@ class SistemaConocimiento:
             raise ValueError(f'Documento no encontrado: {doc_id}')
 
         doc_base = self.documentos[idx_base]
+        # El documento base también pasa por el control de acceso: de lo contrario
+        # bastaría con pedir recomendaciones de un restringido para leer su título.
+        if not self._es_accesible(doc_base, permitir_confidenciales):
+            raise PermissionError(
+                f'El documento {doc_id} está restringido y requiere un nivel de acceso autorizado.'
+            )
+
         similitudes = cosine_similarity(self.matriz[idx_base], self.matriz).ravel()
         ordenados = sorted(enumerate(similitudes), key=lambda item: (-float(item[1]), item[0]))
 
@@ -202,6 +221,8 @@ class SistemaConocimiento:
             if i == idx_base or float(score) <= 1e-12:
                 continue
             cand = self.documentos[i]
+            if not self._es_accesible(cand, permitir_confidenciales):
+                continue
             recomendaciones.append({
                 **cand,
                 'similitud': round(float(score), 5),
@@ -214,7 +235,8 @@ class SistemaConocimiento:
         return recomendaciones
 
     def recomendar_por_contexto(self, historial_consultas: list[str], limite: int = 4,
-                               excluir_ids: set[str] | None = None) -> list[dict]:
+                               excluir_ids: set[str] | None = None,
+                               permitir_confidenciales: bool = False) -> list[dict]:
         """Recomienda documentos a partir del historial o contexto de búsqueda."""
         if limite < 1:
             raise ValueError('limite debe ser positivo.')
@@ -234,6 +256,8 @@ class SistemaConocimiento:
             if float(score) <= 1e-12:
                 continue
             doc = self.documentos[i]
+            if not self._es_accesible(doc, permitir_confidenciales):
+                continue
             if doc['id'] in excluidos:
                 continue
             coincidencias = sorted(c for c in doc.get('conceptos', []) if normalizar(c) in terminos_ctx)
@@ -251,24 +275,42 @@ class SistemaConocimiento:
         return recomendaciones
 
     def responder_chatbot(self, pregunta: str, limite_fuentes: int = 3,
-                          tipo: str | None = None, expansion: bool = True) -> dict:
+                          tipo: str | None = None, expansion: bool = True,
+                          permitir_confidenciales: bool = False) -> dict:
         """Recupera documentos relevantes y redacta una respuesta basada en ellos."""
         if not pregunta or not pregunta.strip():
             raise ValueError('Escribe una pregunta para consultar al asistente.')
 
-        fuentes = self.buscar(pregunta, limite=limite_fuentes, tipo=tipo, expansion=expansion)
+        fuentes = self.buscar(pregunta, limite=limite_fuentes, tipo=tipo, expansion=expansion,
+                              permitir_confidenciales=permitir_confidenciales)
         q_expandida = self.expandir_consulta(pregunta) if expansion else pregunta
 
         if not fuentes:
-            return {
-                'pregunta': pregunta.strip(),
-                'consulta_expandida': q_expandida,
-                'respuesta': (
+            # Distingue «no hay nada» de «lo hay pero está restringido», para que el
+            # control de acceso sea visible en lugar de parecer una búsqueda vacía.
+            bloqueados = 0
+            if not permitir_confidenciales:
+                sin_filtro = self.buscar(pregunta, limite=limite_fuentes, tipo=tipo,
+                                         expansion=expansion, permitir_confidenciales=True)
+                bloqueados = sum(1 for d in sin_filtro if d.get('confidencial', False))
+            if bloqueados:
+                mensaje = (
+                    'No se encontraron documentos autorizados para tu nivel de acceso. '
+                    'Los registros confidenciales están restringidos '
+                    f'({bloqueados} documento(s) coincidente(s) bloqueado(s)).'
+                )
+            else:
+                mensaje = (
                     'No encontré documentos suficientemente relacionados con tu consulta en el catálogo actual. '
                     'Intenta reformularla con términos de NexaSoft Solutions como credenciales, respaldo, API REST, '
                     'despliegue CI/CD, incidentes, indicadores, privacidad, git, monitoreo o proyectos ágiles.'
-                ),
+                )
+            return {
+                'pregunta': pregunta.strip(),
+                'consulta_expandida': q_expandida,
+                'respuesta': mensaje,
                 'fuentes': [],
+                'bloqueados': bloqueados,
             }
 
         palabras_q = set(normalizar(q_expandida).split())
@@ -291,6 +333,7 @@ class SistemaConocimiento:
             'consulta_expandida': q_expandida,
             'respuesta': respuesta,
             'fuentes': fuentes,
+            'bloqueados': 0,
         }
     
     

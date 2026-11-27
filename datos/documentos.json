@@ -1028,7 +1028,7 @@
       "credenciales",
       "api",
       "seguridad",
-      "acceso"
+      "accesos"
     ],
     "contenido": "Registro interno restringido con tokens de acceso maestro, llaves privadas de firma JWT y credenciales de integración con pasarelas externas de NexaSoft Solutions. Prohibida su divulgación fuera del equipo líder de arquitectura.",
     "version": "1.0",
@@ -1062,7 +1062,7 @@
     "area": "Infraestructura",
     "conceptos": [
       "respaldo",
-      "recuperacion",
+      "recuperación",
       "servidor",
       "seguridad"
     ],
@@ -1080,7 +1080,7 @@
     "area": "Ciberseguridad",
     "conceptos": [
       "seguridad",
-      "auditoria",
+      "auditoría",
       "privacidad",
       "incidentes"
     ],

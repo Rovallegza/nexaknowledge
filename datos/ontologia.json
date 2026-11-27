@@ -1,0 +1,33 @@
+{
+  "organizacion": "NexaSoft Solutions",
+  "clases": ["Organización", "Área", "Proyecto", "Persona", "Documento", "TipoDocumento", "Concepto", "Versión"],
+  "tipos_documento": ["Manual", "Informe", "Política", "Documentación técnica", "Procedimiento", "Lección aprendida"],
+  "areas": ["Desarrollo", "DevOps", "Infraestructura", "Ciberseguridad", "Analítica de Datos", "Soporte", "Gestión de Proyectos"],
+  "conceptos": ["seguridad", "autenticación", "credenciales", "accesos", "respaldo", "recuperación", "continuidad", "datos", "api", "integración", "desarrollo", "devops", "despliegue", "pruebas", "automatización", "incidentes", "soporte", "sla", "monitoreo", "indicadores", "calidad", "analítica", "privacidad", "cumplimiento", "git", "versionado", "alertas", "infraestructura", "disponibilidad", "agilidad", "proyectos", "colaboración", "mejora"],
+  "relaciones": {
+    "tieneArea": "Organización → Área",
+    "desarrolla": "Área → Proyecto",
+    "genera": "Persona → Documento",
+    "perteneceA": "Documento → Área",
+    "tieneTipo": "Documento → TipoDocumento",
+    "trataSobre": "Documento → Concepto",
+    "usaTecnología": "Proyecto → Concepto",
+    "versionDe": "Versión → Documento",
+    "relacionadoCon": "Concepto → Concepto",
+    "actualiza": "Documento → Documento"
+  },
+  "sinonimos_de_consulta": {
+    "credenciales": ["contraseñas", "cuentas", "acceso", "identidad", "login"],
+    "autenticación": ["mfa", "doble factor", "inicio de sesión", "verificación"],
+    "respaldo": ["backup", "copias de seguridad", "restauración", "recuperar archivos", "recuperar información"],
+    "recuperación": ["restaurar", "continuidad", "desastre", "falla de servidor"],
+    "api": ["servicio web", "endpoint", "microservicio", "interfaz de programación"],
+    "despliegue": ["publicar versión", "producción", "pipeline", "entrega continua"],
+    "incidentes": ["ticket", "avería", "problema técnico", "fallo", "error"],
+    "indicadores": ["kpi", "métricas", "tablero", "resultados"],
+    "privacidad": ["datos personales", "protección de datos", "información sensible"],
+    "git": ["repositorio", "control de versiones", "pull request"],
+    "monitoreo": ["alertas", "logs", "observabilidad", "vigilar servidores"],
+    "agilidad": ["scrum", "sprint", "kanban", "retrospectiva"]
+  }
+}

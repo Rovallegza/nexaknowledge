@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "NX-0101",
+    "titulo": "Manual de uso: Gestión de credenciales",
+    "tipo": "Manual",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "seguridad",
+      "autenticación",
+      "credenciales",
+      "accesos"
+    ],
+    "contenido": "Este manual explica cómo utilizar las herramientas relacionadas con gestión de credenciales. Incluye instrucciones para usuarios y administradores, ejemplos de operación de autenticación multifactor, contraseñas seguras, acceso privilegiado y gestión de identidad, recomendaciones de uso cotidiano y una sección de preguntas frecuentes. La organización reduce el riesgo de cuentas comprometidas y verifica la identidad antes de autorizar servicios. La guía ofrece rutas de navegación, buenas prácticas y soluciones comunes para personal nuevo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-02",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0102",
+    "titulo": "Manual de uso: Respaldo y recuperación",
+    "tipo": "Manual",
+    "area": "Infraestructura",
+    "conceptos": [
+      "respaldo",
+      "recuperación",
+      "continuidad",
+      "datos"
+    ],
+    "contenido": "Este manual explica cómo utilizar las herramientas relacionadas con respaldo y recuperación. Incluye instrucciones para usuarios y administradores, ejemplos de operación de copias de seguridad, retención, almacenamiento redundante y restauración de datos, recomendaciones de uso cotidiano y una sección de preguntas frecuentes. Los equipos protegen la continuidad operativa ante errores, pérdidas o fallas de infraestructura. La guía ofrece rutas de navegación, buenas prácticas y soluciones comunes para personal nuevo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-03",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0103",
+    "titulo": "Manual de uso: Servicios API REST",
+    "tipo": "Manual",
+    "area": "Desarrollo",
+    "conceptos": [
+      "api",
+      "integración",
+      "desarrollo",
+      "autenticación"
+    ],
+    "contenido": "Este manual explica cómo utilizar las herramientas relacionadas con servicios api rest. Incluye instrucciones para usuarios y administradores, ejemplos de operación de endpoints HTTP, contratos JSON, autenticación de API y manejo de códigos de error, recomendaciones de uso cotidiano y una sección de preguntas frecuentes. Los módulos de software intercambian datos mediante servicios documentados con versionado y validación. La guía ofrece rutas de navegación, buenas prácticas y soluciones comunes para personal nuevo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-04",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0104",
+    "titulo": "Manual de uso: Despliegue CI/CD",
+    "tipo": "Manual",
+    "area": "DevOps",
+    "conceptos": [
+      "devops",
+      "despliegue",
+      "pruebas",
+      "automatización"
+    ],
+    "contenido": "Este manual explica cómo utilizar las herramientas relacionadas con despliegue ci/cd. Incluye instrucciones para usuarios y administradores, ejemplos de operación de integración continua, pruebas automatizadas, pipelines y despliegue a producción, recomendaciones de uso cotidiano y una sección de preguntas frecuentes. El equipo publica nuevas versiones con controles de calidad, aprobación y reversión. La guía ofrece rutas de navegación, buenas prácticas y soluciones comunes para personal nuevo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-05",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0105",
+    "titulo": "Manual de uso: Atención de incidentes",
+    "tipo": "Manual",
+    "area": "Soporte",
+    "conceptos": [
+      "incidentes",
+      "soporte",
+      "sla",
+      "monitoreo"
+    ],
+    "contenido": "Este manual explica cómo utilizar las herramientas relacionadas con atención de incidentes. Incluye instrucciones para usuarios y administradores, ejemplos de operación de tickets de servicio, prioridades, escalamiento, tiempos SLA y diagnóstico de fallas, recomendaciones de uso cotidiano y una sección de preguntas frecuentes. La mesa de ayuda restaura servicios afectados y comunica el estado a los usuarios. La guía ofrece rutas de navegación, buenas prácticas y soluciones comunes para personal nuevo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-06",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0106",
+    "titulo": "Manual de uso: Análisis de indicadores",
+    "tipo": "Manual",
+    "area": "Analítica de Datos",
+    "conceptos": [
+      "datos",
+      "indicadores",
+      "calidad",
+      "analítica"
+    ],
+    "contenido": "Este manual explica cómo utilizar las herramientas relacionadas con análisis de indicadores. Incluye instrucciones para usuarios y administradores, ejemplos de operación de tableros KPI, indicadores de negocio, limpieza de datos y trazabilidad de métricas, recomendaciones de uso cotidiano y una sección de preguntas frecuentes. Los analistas convierten registros operativos en información para decisiones verificables. La guía ofrece rutas de navegación, buenas prácticas y soluciones comunes para personal nuevo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-07",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0107",
+    "titulo": "Manual de uso: Protección de datos personales",
+    "tipo": "Manual",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "privacidad",
+      "seguridad",
+      "datos",
+      "cumplimiento"
+    ],
+    "contenido": "Este manual explica cómo utilizar las herramientas relacionadas con protección de datos personales. Incluye instrucciones para usuarios y administradores, ejemplos de operación de privacidad, cifrado, consentimiento, acceso mínimo y clasificación de información, recomendaciones de uso cotidiano y una sección de preguntas frecuentes. La organización minimiza la exposición de datos sensibles durante el tratamiento y almacenamiento. La guía ofrece rutas de navegación, buenas prácticas y soluciones comunes para personal nuevo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-08",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0108",
+    "titulo": "Manual de uso: Gestión de versiones",
+    "tipo": "Manual",
+    "area": "Desarrollo",
+    "conceptos": [
+      "git",
+      "desarrollo",
+      "versionado",
+      "calidad"
+    ],
+    "contenido": "Este manual explica cómo utilizar las herramientas relacionadas con gestión de versiones. Incluye instrucciones para usuarios y administradores, ejemplos de operación de repositorios Git, ramas de código, revisiones pull request y liberaciones, recomendaciones de uso cotidiano y una sección de preguntas frecuentes. Los desarrolladores conservan trazabilidad de cambios y reducen conflictos al integrar funcionalidades. La guía ofrece rutas de navegación, buenas prácticas y soluciones comunes para personal nuevo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-09",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0109",
+    "titulo": "Manual de uso: Monitoreo de servicios",
+    "tipo": "Manual",
+    "area": "Infraestructura",
+    "conceptos": [
+      "monitoreo",
+      "infraestructura",
+      "alertas",
+      "disponibilidad"
+    ],
+    "contenido": "Este manual explica cómo utilizar las herramientas relacionadas con monitoreo de servicios. Incluye instrucciones para usuarios y administradores, ejemplos de operación de métricas de disponibilidad, alertas de servidores, logs y observabilidad, recomendaciones de uso cotidiano y una sección de preguntas frecuentes. Las alertas tempranas ayudan a identificar degradaciones antes de que afecten a los clientes. La guía ofrece rutas de navegación, buenas prácticas y soluciones comunes para personal nuevo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-10",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0110",
+    "titulo": "Manual de uso: Gestión de proyectos ágiles",
+    "tipo": "Manual",
+    "area": "Gestión de Proyectos",
+    "conceptos": [
+      "agilidad",
+      "proyectos",
+      "colaboración",
+      "mejora"
+    ],
+    "contenido": "Este manual explica cómo utilizar las herramientas relacionadas con gestión de proyectos ágiles. Incluye instrucciones para usuarios y administradores, ejemplos de operación de historias de usuario, retrospectivas, tablero Kanban, sprints y prioridades, recomendaciones de uso cotidiano y una sección de preguntas frecuentes. Los equipos coordinan entregables y revisan avances para mejorar continuamente la entrega. La guía ofrece rutas de navegación, buenas prácticas y soluciones comunes para personal nuevo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-11",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0201",
+    "titulo": "Informe de resultados: Gestión de credenciales",
+    "tipo": "Informe",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "seguridad",
+      "autenticación",
+      "credenciales",
+      "accesos"
+    ],
+    "contenido": "Este informe presenta hallazgos del periodo de revisión sobre gestión de credenciales. Analiza evidencias, resultados de indicadores, desviaciones y desempeño en autenticación multifactor, contraseñas seguras, acceso privilegiado y gestión de identidad. La organización reduce el riesgo de cuentas comprometidas y verifica la identidad antes de autorizar servicios. Se registran riesgos identificados, conclusiones, responsables de seguimiento y recomendaciones de mejora para el próximo periodo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-02",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0202",
+    "titulo": "Informe de resultados: Respaldo y recuperación",
+    "tipo": "Informe",
+    "area": "Infraestructura",
+    "conceptos": [
+      "respaldo",
+      "recuperación",
+      "continuidad",
+      "datos"
+    ],
+    "contenido": "Este informe presenta hallazgos del periodo de revisión sobre respaldo y recuperación. Analiza evidencias, resultados de indicadores, desviaciones y desempeño en copias de seguridad, retención, almacenamiento redundante y restauración de datos. Los equipos protegen la continuidad operativa ante errores, pérdidas o fallas de infraestructura. Se registran riesgos identificados, conclusiones, responsables de seguimiento y recomendaciones de mejora para el próximo periodo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-03",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0203",
+    "titulo": "Informe de resultados: Servicios API REST",
+    "tipo": "Informe",
+    "area": "Desarrollo",
+    "conceptos": [
+      "api",
+      "integración",
+      "desarrollo",
+      "autenticación"
+    ],
+    "contenido": "Este informe presenta hallazgos del periodo de revisión sobre servicios api rest. Analiza evidencias, resultados de indicadores, desviaciones y desempeño en endpoints HTTP, contratos JSON, autenticación de API y manejo de códigos de error. Los módulos de software intercambian datos mediante servicios documentados con versionado y validación. Se registran riesgos identificados, conclusiones, responsables de seguimiento y recomendaciones de mejora para el próximo periodo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-04",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0204",
+    "titulo": "Informe de resultados: Despliegue CI/CD",
+    "tipo": "Informe",
+    "area": "DevOps",
+    "conceptos": [
+      "devops",
+      "despliegue",
+      "pruebas",
+      "automatización"
+    ],
+    "contenido": "Este informe presenta hallazgos del periodo de revisión sobre despliegue ci/cd. Analiza evidencias, resultados de indicadores, desviaciones y desempeño en integración continua, pruebas automatizadas, pipelines y despliegue a producción. El equipo publica nuevas versiones con controles de calidad, aprobación y reversión. Se registran riesgos identificados, conclusiones, responsables de seguimiento y recomendaciones de mejora para el próximo periodo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-05",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0205",
+    "titulo": "Informe de resultados: Atención de incidentes",
+    "tipo": "Informe",
+    "area": "Soporte",
+    "conceptos": [
+      "incidentes",
+      "soporte",
+      "sla",
+      "monitoreo"
+    ],
+    "contenido": "Este informe presenta hallazgos del periodo de revisión sobre atención de incidentes. Analiza evidencias, resultados de indicadores, desviaciones y desempeño en tickets de servicio, prioridades, escalamiento, tiempos SLA y diagnóstico de fallas. La mesa de ayuda restaura servicios afectados y comunica el estado a los usuarios. Se registran riesgos identificados, conclusiones, responsables de seguimiento y recomendaciones de mejora para el próximo periodo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-06",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0206",
+    "titulo": "Informe de resultados: Análisis de indicadores",
+    "tipo": "Informe",
+    "area": "Analítica de Datos",
+    "conceptos": [
+      "datos",
+      "indicadores",
+      "calidad",
+      "analítica"
+    ],
+    "contenido": "Este informe presenta hallazgos del periodo de revisión sobre análisis de indicadores. Analiza evidencias, resultados de indicadores, desviaciones y desempeño en tableros KPI, indicadores de negocio, limpieza de datos y trazabilidad de métricas. Los analistas convierten registros operativos en información para decisiones verificables. Se registran riesgos identificados, conclusiones, responsables de seguimiento y recomendaciones de mejora para el próximo periodo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-07",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0207",
+    "titulo": "Informe de resultados: Protección de datos personales",
+    "tipo": "Informe",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "privacidad",
+      "seguridad",
+      "datos",
+      "cumplimiento"
+    ],
+    "contenido": "Este informe presenta hallazgos del periodo de revisión sobre protección de datos personales. Analiza evidencias, resultados de indicadores, desviaciones y desempeño en privacidad, cifrado, consentimiento, acceso mínimo y clasificación de información. La organización minimiza la exposición de datos sensibles durante el tratamiento y almacenamiento. Se registran riesgos identificados, conclusiones, responsables de seguimiento y recomendaciones de mejora para el próximo periodo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-08",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0208",
+    "titulo": "Informe de resultados: Gestión de versiones",
+    "tipo": "Informe",
+    "area": "Desarrollo",
+    "conceptos": [
+      "git",
+      "desarrollo",
+      "versionado",
+      "calidad"
+    ],
+    "contenido": "Este informe presenta hallazgos del periodo de revisión sobre gestión de versiones. Analiza evidencias, resultados de indicadores, desviaciones y desempeño en repositorios Git, ramas de código, revisiones pull request y liberaciones. Los desarrolladores conservan trazabilidad de cambios y reducen conflictos al integrar funcionalidades. Se registran riesgos identificados, conclusiones, responsables de seguimiento y recomendaciones de mejora para el próximo periodo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-09",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0209",
+    "titulo": "Informe de resultados: Monitoreo de servicios",
+    "tipo": "Informe",
+    "area": "Infraestructura",
+    "conceptos": [
+      "monitoreo",
+      "infraestructura",
+      "alertas",
+      "disponibilidad"
+    ],
+    "contenido": "Este informe presenta hallazgos del periodo de revisión sobre monitoreo de servicios. Analiza evidencias, resultados de indicadores, desviaciones y desempeño en métricas de disponibilidad, alertas de servidores, logs y observabilidad. Las alertas tempranas ayudan a identificar degradaciones antes de que afecten a los clientes. Se registran riesgos identificados, conclusiones, responsables de seguimiento y recomendaciones de mejora para el próximo periodo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-10",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0210",
+    "titulo": "Informe de resultados: Gestión de proyectos ágiles",
+    "tipo": "Informe",
+    "area": "Gestión de Proyectos",
+    "conceptos": [
+      "agilidad",
+      "proyectos",
+      "colaboración",
+      "mejora"
+    ],
+    "contenido": "Este informe presenta hallazgos del periodo de revisión sobre gestión de proyectos ágiles. Analiza evidencias, resultados de indicadores, desviaciones y desempeño en historias de usuario, retrospectivas, tablero Kanban, sprints y prioridades. Los equipos coordinan entregables y revisan avances para mejorar continuamente la entrega. Se registran riesgos identificados, conclusiones, responsables de seguimiento y recomendaciones de mejora para el próximo periodo.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-11",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0301",
+    "titulo": "Política corporativa: Gestión de credenciales",
+    "tipo": "Política",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "seguridad",
+      "autenticación",
+      "credenciales",
+      "accesos"
+    ],
+    "contenido": "Esta política establece requisitos obligatorios y criterios de cumplimiento para gestión de credenciales. Define las responsabilidades de colaboradores, líderes y auditores respecto a autenticación multifactor, contraseñas seguras, acceso privilegiado y gestión de identidad. La organización reduce el riesgo de cuentas comprometidas y verifica la identidad antes de autorizar servicios. Incluye reglas de autorización, excepciones aprobadas, controles de supervisión y frecuencia de revisión para asegurar el cumplimiento institucional.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-02",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0302",
+    "titulo": "Política corporativa: Respaldo y recuperación",
+    "tipo": "Política",
+    "area": "Infraestructura",
+    "conceptos": [
+      "respaldo",
+      "recuperación",
+      "continuidad",
+      "datos"
+    ],
+    "contenido": "Esta política establece requisitos obligatorios y criterios de cumplimiento para respaldo y recuperación. Define las responsabilidades de colaboradores, líderes y auditores respecto a copias de seguridad, retención, almacenamiento redundante y restauración de datos. Los equipos protegen la continuidad operativa ante errores, pérdidas o fallas de infraestructura. Incluye reglas de autorización, excepciones aprobadas, controles de supervisión y frecuencia de revisión para asegurar el cumplimiento institucional.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-03",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0303",
+    "titulo": "Política corporativa: Servicios API REST",
+    "tipo": "Política",
+    "area": "Desarrollo",
+    "conceptos": [
+      "api",
+      "integración",
+      "desarrollo",
+      "autenticación"
+    ],
+    "contenido": "Esta política establece requisitos obligatorios y criterios de cumplimiento para servicios api rest. Define las responsabilidades de colaboradores, líderes y auditores respecto a endpoints HTTP, contratos JSON, autenticación de API y manejo de códigos de error. Los módulos de software intercambian datos mediante servicios documentados con versionado y validación. Incluye reglas de autorización, excepciones aprobadas, controles de supervisión y frecuencia de revisión para asegurar el cumplimiento institucional.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-04",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0304",
+    "titulo": "Política corporativa: Despliegue CI/CD",
+    "tipo": "Política",
+    "area": "DevOps",
+    "conceptos": [
+      "devops",
+      "despliegue",
+      "pruebas",
+      "automatización"
+    ],
+    "contenido": "Esta política establece requisitos obligatorios y criterios de cumplimiento para despliegue ci/cd. Define las responsabilidades de colaboradores, líderes y auditores respecto a integración continua, pruebas automatizadas, pipelines y despliegue a producción. El equipo publica nuevas versiones con controles de calidad, aprobación y reversión. Incluye reglas de autorización, excepciones aprobadas, controles de supervisión y frecuencia de revisión para asegurar el cumplimiento institucional.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-05",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0305",
+    "titulo": "Política corporativa: Atención de incidentes",
+    "tipo": "Política",
+    "area": "Soporte",
+    "conceptos": [
+      "incidentes",
+      "soporte",
+      "sla",
+      "monitoreo"
+    ],
+    "contenido": "Esta política establece requisitos obligatorios y criterios de cumplimiento para atención de incidentes. Define las responsabilidades de colaboradores, líderes y auditores respecto a tickets de servicio, prioridades, escalamiento, tiempos SLA y diagnóstico de fallas. La mesa de ayuda restaura servicios afectados y comunica el estado a los usuarios. Incluye reglas de autorización, excepciones aprobadas, controles de supervisión y frecuencia de revisión para asegurar el cumplimiento institucional.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-06",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0306",
+    "titulo": "Política corporativa: Análisis de indicadores",
+    "tipo": "Política",
+    "area": "Analítica de Datos",
+    "conceptos": [
+      "datos",
+      "indicadores",
+      "calidad",
+      "analítica"
+    ],
+    "contenido": "Esta política establece requisitos obligatorios y criterios de cumplimiento para análisis de indicadores. Define las responsabilidades de colaboradores, líderes y auditores respecto a tableros KPI, indicadores de negocio, limpieza de datos y trazabilidad de métricas. Los analistas convierten registros operativos en información para decisiones verificables. Incluye reglas de autorización, excepciones aprobadas, controles de supervisión y frecuencia de revisión para asegurar el cumplimiento institucional.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-07",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0307",
+    "titulo": "Política corporativa: Protección de datos personales",
+    "tipo": "Política",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "privacidad",
+      "seguridad",
+      "datos",
+      "cumplimiento"
+    ],
+    "contenido": "Esta política establece requisitos obligatorios y criterios de cumplimiento para protección de datos personales. Define las responsabilidades de colaboradores, líderes y auditores respecto a privacidad, cifrado, consentimiento, acceso mínimo y clasificación de información. La organización minimiza la exposición de datos sensibles durante el tratamiento y almacenamiento. Incluye reglas de autorización, excepciones aprobadas, controles de supervisión y frecuencia de revisión para asegurar el cumplimiento institucional.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-08",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0308",
+    "titulo": "Política corporativa: Gestión de versiones",
+    "tipo": "Política",
+    "area": "Desarrollo",
+    "conceptos": [
+      "git",
+      "desarrollo",
+      "versionado",
+      "calidad"
+    ],
+    "contenido": "Esta política establece requisitos obligatorios y criterios de cumplimiento para gestión de versiones. Define las responsabilidades de colaboradores, líderes y auditores respecto a repositorios Git, ramas de código, revisiones pull request y liberaciones. Los desarrolladores conservan trazabilidad de cambios y reducen conflictos al integrar funcionalidades. Incluye reglas de autorización, excepciones aprobadas, controles de supervisión y frecuencia de revisión para asegurar el cumplimiento institucional.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-09",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0309",
+    "titulo": "Política corporativa: Monitoreo de servicios",
+    "tipo": "Política",
+    "area": "Infraestructura",
+    "conceptos": [
+      "monitoreo",
+      "infraestructura",
+      "alertas",
+      "disponibilidad"
+    ],
+    "contenido": "Esta política establece requisitos obligatorios y criterios de cumplimiento para monitoreo de servicios. Define las responsabilidades de colaboradores, líderes y auditores respecto a métricas de disponibilidad, alertas de servidores, logs y observabilidad. Las alertas tempranas ayudan a identificar degradaciones antes de que afecten a los clientes. Incluye reglas de autorización, excepciones aprobadas, controles de supervisión y frecuencia de revisión para asegurar el cumplimiento institucional.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-10",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0310",
+    "titulo": "Política corporativa: Gestión de proyectos ágiles",
+    "tipo": "Política",
+    "area": "Gestión de Proyectos",
+    "conceptos": [
+      "agilidad",
+      "proyectos",
+      "colaboración",
+      "mejora"
+    ],
+    "contenido": "Esta política establece requisitos obligatorios y criterios de cumplimiento para gestión de proyectos ágiles. Define las responsabilidades de colaboradores, líderes y auditores respecto a historias de usuario, retrospectivas, tablero Kanban, sprints y prioridades. Los equipos coordinan entregables y revisan avances para mejorar continuamente la entrega. Incluye reglas de autorización, excepciones aprobadas, controles de supervisión y frecuencia de revisión para asegurar el cumplimiento institucional.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-11",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0401",
+    "titulo": "Especificación técnica: Gestión de credenciales",
+    "tipo": "Documentación técnica",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "seguridad",
+      "autenticación",
+      "credenciales",
+      "accesos"
+    ],
+    "contenido": "Esta documentación técnica describe la arquitectura, componentes e interfaces utilizados en gestión de credenciales. Detalla configuraciones, dependencias, parámetros, estructuras y decisiones de diseño asociadas con autenticación multifactor, contraseñas seguras, acceso privilegiado y gestión de identidad. La organización reduce el riesgo de cuentas comprometidas y verifica la identidad antes de autorizar servicios. Se especifican requisitos de integración, restricciones técnicas, ejemplos de configuración y criterios de compatibilidad para ingeniería.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-02",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0402",
+    "titulo": "Especificación técnica: Respaldo y recuperación",
+    "tipo": "Documentación técnica",
+    "area": "Infraestructura",
+    "conceptos": [
+      "respaldo",
+      "recuperación",
+      "continuidad",
+      "datos"
+    ],
+    "contenido": "Esta documentación técnica describe la arquitectura, componentes e interfaces utilizados en respaldo y recuperación. Detalla configuraciones, dependencias, parámetros, estructuras y decisiones de diseño asociadas con copias de seguridad, retención, almacenamiento redundante y restauración de datos. Los equipos protegen la continuidad operativa ante errores, pérdidas o fallas de infraestructura. Se especifican requisitos de integración, restricciones técnicas, ejemplos de configuración y criterios de compatibilidad para ingeniería.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-03",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0403",
+    "titulo": "Especificación técnica: Servicios API REST",
+    "tipo": "Documentación técnica",
+    "area": "Desarrollo",
+    "conceptos": [
+      "api",
+      "integración",
+      "desarrollo",
+      "autenticación"
+    ],
+    "contenido": "Esta documentación técnica describe la arquitectura, componentes e interfaces utilizados en servicios api rest. Detalla configuraciones, dependencias, parámetros, estructuras y decisiones de diseño asociadas con endpoints HTTP, contratos JSON, autenticación de API y manejo de códigos de error. Los módulos de software intercambian datos mediante servicios documentados con versionado y validación. Se especifican requisitos de integración, restricciones técnicas, ejemplos de configuración y criterios de compatibilidad para ingeniería.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-04",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0404",
+    "titulo": "Especificación técnica: Despliegue CI/CD",
+    "tipo": "Documentación técnica",
+    "area": "DevOps",
+    "conceptos": [
+      "devops",
+      "despliegue",
+      "pruebas",
+      "automatización"
+    ],
+    "contenido": "Esta documentación técnica describe la arquitectura, componentes e interfaces utilizados en despliegue ci/cd. Detalla configuraciones, dependencias, parámetros, estructuras y decisiones de diseño asociadas con integración continua, pruebas automatizadas, pipelines y despliegue a producción. El equipo publica nuevas versiones con controles de calidad, aprobación y reversión. Se especifican requisitos de integración, restricciones técnicas, ejemplos de configuración y criterios de compatibilidad para ingeniería.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-05",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0405",
+    "titulo": "Especificación técnica: Atención de incidentes",
+    "tipo": "Documentación técnica",
+    "area": "Soporte",
+    "conceptos": [
+      "incidentes",
+      "soporte",
+      "sla",
+      "monitoreo"
+    ],
+    "contenido": "Esta documentación técnica describe la arquitectura, componentes e interfaces utilizados en atención de incidentes. Detalla configuraciones, dependencias, parámetros, estructuras y decisiones de diseño asociadas con tickets de servicio, prioridades, escalamiento, tiempos SLA y diagnóstico de fallas. La mesa de ayuda restaura servicios afectados y comunica el estado a los usuarios. Se especifican requisitos de integración, restricciones técnicas, ejemplos de configuración y criterios de compatibilidad para ingeniería.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-06",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0406",
+    "titulo": "Especificación técnica: Análisis de indicadores",
+    "tipo": "Documentación técnica",
+    "area": "Analítica de Datos",
+    "conceptos": [
+      "datos",
+      "indicadores",
+      "calidad",
+      "analítica"
+    ],
+    "contenido": "Esta documentación técnica describe la arquitectura, componentes e interfaces utilizados en análisis de indicadores. Detalla configuraciones, dependencias, parámetros, estructuras y decisiones de diseño asociadas con tableros KPI, indicadores de negocio, limpieza de datos y trazabilidad de métricas. Los analistas convierten registros operativos en información para decisiones verificables. Se especifican requisitos de integración, restricciones técnicas, ejemplos de configuración y criterios de compatibilidad para ingeniería.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-07",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0407",
+    "titulo": "Especificación técnica: Protección de datos personales",
+    "tipo": "Documentación técnica",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "privacidad",
+      "seguridad",
+      "datos",
+      "cumplimiento"
+    ],
+    "contenido": "Esta documentación técnica describe la arquitectura, componentes e interfaces utilizados en protección de datos personales. Detalla configuraciones, dependencias, parámetros, estructuras y decisiones de diseño asociadas con privacidad, cifrado, consentimiento, acceso mínimo y clasificación de información. La organización minimiza la exposición de datos sensibles durante el tratamiento y almacenamiento. Se especifican requisitos de integración, restricciones técnicas, ejemplos de configuración y criterios de compatibilidad para ingeniería.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-08",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0408",
+    "titulo": "Especificación técnica: Gestión de versiones",
+    "tipo": "Documentación técnica",
+    "area": "Desarrollo",
+    "conceptos": [
+      "git",
+      "desarrollo",
+      "versionado",
+      "calidad"
+    ],
+    "contenido": "Esta documentación técnica describe la arquitectura, componentes e interfaces utilizados en gestión de versiones. Detalla configuraciones, dependencias, parámetros, estructuras y decisiones de diseño asociadas con repositorios Git, ramas de código, revisiones pull request y liberaciones. Los desarrolladores conservan trazabilidad de cambios y reducen conflictos al integrar funcionalidades. Se especifican requisitos de integración, restricciones técnicas, ejemplos de configuración y criterios de compatibilidad para ingeniería.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-09",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0409",
+    "titulo": "Especificación técnica: Monitoreo de servicios",
+    "tipo": "Documentación técnica",
+    "area": "Infraestructura",
+    "conceptos": [
+      "monitoreo",
+      "infraestructura",
+      "alertas",
+      "disponibilidad"
+    ],
+    "contenido": "Esta documentación técnica describe la arquitectura, componentes e interfaces utilizados en monitoreo de servicios. Detalla configuraciones, dependencias, parámetros, estructuras y decisiones de diseño asociadas con métricas de disponibilidad, alertas de servidores, logs y observabilidad. Las alertas tempranas ayudan a identificar degradaciones antes de que afecten a los clientes. Se especifican requisitos de integración, restricciones técnicas, ejemplos de configuración y criterios de compatibilidad para ingeniería.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-10",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0410",
+    "titulo": "Especificación técnica: Gestión de proyectos ágiles",
+    "tipo": "Documentación técnica",
+    "area": "Gestión de Proyectos",
+    "conceptos": [
+      "agilidad",
+      "proyectos",
+      "colaboración",
+      "mejora"
+    ],
+    "contenido": "Esta documentación técnica describe la arquitectura, componentes e interfaces utilizados en gestión de proyectos ágiles. Detalla configuraciones, dependencias, parámetros, estructuras y decisiones de diseño asociadas con historias de usuario, retrospectivas, tablero Kanban, sprints y prioridades. Los equipos coordinan entregables y revisan avances para mejorar continuamente la entrega. Se especifican requisitos de integración, restricciones técnicas, ejemplos de configuración y criterios de compatibilidad para ingeniería.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-11",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0501",
+    "titulo": "Procedimiento operativo: Gestión de credenciales",
+    "tipo": "Procedimiento",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "seguridad",
+      "autenticación",
+      "credenciales",
+      "accesos"
+    ],
+    "contenido": "Este procedimiento describe el flujo de trabajo estandarizado para gestión de credenciales. Paso 1: verificar los requisitos previos y la solicitud; paso 2: ejecutar los controles vinculados a autenticación multifactor, contraseñas seguras, acceso privilegiado y gestión de identidad; paso 3: registrar evidencia y validar el resultado; paso 4: notificar y cerrar la actividad. La organización reduce el riesgo de cuentas comprometidas y verifica la identidad antes de autorizar servicios. Define responsables, puntos de control, criterios de aceptación y acciones de contingencia.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-02",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0502",
+    "titulo": "Procedimiento operativo: Respaldo y recuperación",
+    "tipo": "Procedimiento",
+    "area": "Infraestructura",
+    "conceptos": [
+      "respaldo",
+      "recuperación",
+      "continuidad",
+      "datos"
+    ],
+    "contenido": "Este procedimiento describe el flujo de trabajo estandarizado para respaldo y recuperación. Paso 1: verificar los requisitos previos y la solicitud; paso 2: ejecutar los controles vinculados a copias de seguridad, retención, almacenamiento redundante y restauración de datos; paso 3: registrar evidencia y validar el resultado; paso 4: notificar y cerrar la actividad. Los equipos protegen la continuidad operativa ante errores, pérdidas o fallas de infraestructura. Define responsables, puntos de control, criterios de aceptación y acciones de contingencia.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-03",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0503",
+    "titulo": "Procedimiento operativo: Servicios API REST",
+    "tipo": "Procedimiento",
+    "area": "Desarrollo",
+    "conceptos": [
+      "api",
+      "integración",
+      "desarrollo",
+      "autenticación"
+    ],
+    "contenido": "Este procedimiento describe el flujo de trabajo estandarizado para servicios api rest. Paso 1: verificar los requisitos previos y la solicitud; paso 2: ejecutar los controles vinculados a endpoints HTTP, contratos JSON, autenticación de API y manejo de códigos de error; paso 3: registrar evidencia y validar el resultado; paso 4: notificar y cerrar la actividad. Los módulos de software intercambian datos mediante servicios documentados con versionado y validación. Define responsables, puntos de control, criterios de aceptación y acciones de contingencia.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-04",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0504",
+    "titulo": "Procedimiento operativo: Despliegue CI/CD",
+    "tipo": "Procedimiento",
+    "area": "DevOps",
+    "conceptos": [
+      "devops",
+      "despliegue",
+      "pruebas",
+      "automatización"
+    ],
+    "contenido": "Este procedimiento describe el flujo de trabajo estandarizado para despliegue ci/cd. Paso 1: verificar los requisitos previos y la solicitud; paso 2: ejecutar los controles vinculados a integración continua, pruebas automatizadas, pipelines y despliegue a producción; paso 3: registrar evidencia y validar el resultado; paso 4: notificar y cerrar la actividad. El equipo publica nuevas versiones con controles de calidad, aprobación y reversión. Define responsables, puntos de control, criterios de aceptación y acciones de contingencia.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-05",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0505",
+    "titulo": "Procedimiento operativo: Atención de incidentes",
+    "tipo": "Procedimiento",
+    "area": "Soporte",
+    "conceptos": [
+      "incidentes",
+      "soporte",
+      "sla",
+      "monitoreo"
+    ],
+    "contenido": "Este procedimiento describe el flujo de trabajo estandarizado para atención de incidentes. Paso 1: verificar los requisitos previos y la solicitud; paso 2: ejecutar los controles vinculados a tickets de servicio, prioridades, escalamiento, tiempos SLA y diagnóstico de fallas; paso 3: registrar evidencia y validar el resultado; paso 4: notificar y cerrar la actividad. La mesa de ayuda restaura servicios afectados y comunica el estado a los usuarios. Define responsables, puntos de control, criterios de aceptación y acciones de contingencia.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-06",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0506",
+    "titulo": "Procedimiento operativo: Análisis de indicadores",
+    "tipo": "Procedimiento",
+    "area": "Analítica de Datos",
+    "conceptos": [
+      "datos",
+      "indicadores",
+      "calidad",
+      "analítica"
+    ],
+    "contenido": "Este procedimiento describe el flujo de trabajo estandarizado para análisis de indicadores. Paso 1: verificar los requisitos previos y la solicitud; paso 2: ejecutar los controles vinculados a tableros KPI, indicadores de negocio, limpieza de datos y trazabilidad de métricas; paso 3: registrar evidencia y validar el resultado; paso 4: notificar y cerrar la actividad. Los analistas convierten registros operativos en información para decisiones verificables. Define responsables, puntos de control, criterios de aceptación y acciones de contingencia.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-07",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0507",
+    "titulo": "Procedimiento operativo: Protección de datos personales",
+    "tipo": "Procedimiento",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "privacidad",
+      "seguridad",
+      "datos",
+      "cumplimiento"
+    ],
+    "contenido": "Este procedimiento describe el flujo de trabajo estandarizado para protección de datos personales. Paso 1: verificar los requisitos previos y la solicitud; paso 2: ejecutar los controles vinculados a privacidad, cifrado, consentimiento, acceso mínimo y clasificación de información; paso 3: registrar evidencia y validar el resultado; paso 4: notificar y cerrar la actividad. La organización minimiza la exposición de datos sensibles durante el tratamiento y almacenamiento. Define responsables, puntos de control, criterios de aceptación y acciones de contingencia.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-08",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0508",
+    "titulo": "Procedimiento operativo: Gestión de versiones",
+    "tipo": "Procedimiento",
+    "area": "Desarrollo",
+    "conceptos": [
+      "git",
+      "desarrollo",
+      "versionado",
+      "calidad"
+    ],
+    "contenido": "Este procedimiento describe el flujo de trabajo estandarizado para gestión de versiones. Paso 1: verificar los requisitos previos y la solicitud; paso 2: ejecutar los controles vinculados a repositorios Git, ramas de código, revisiones pull request y liberaciones; paso 3: registrar evidencia y validar el resultado; paso 4: notificar y cerrar la actividad. Los desarrolladores conservan trazabilidad de cambios y reducen conflictos al integrar funcionalidades. Define responsables, puntos de control, criterios de aceptación y acciones de contingencia.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-09",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0509",
+    "titulo": "Procedimiento operativo: Monitoreo de servicios",
+    "tipo": "Procedimiento",
+    "area": "Infraestructura",
+    "conceptos": [
+      "monitoreo",
+      "infraestructura",
+      "alertas",
+      "disponibilidad"
+    ],
+    "contenido": "Este procedimiento describe el flujo de trabajo estandarizado para monitoreo de servicios. Paso 1: verificar los requisitos previos y la solicitud; paso 2: ejecutar los controles vinculados a métricas de disponibilidad, alertas de servidores, logs y observabilidad; paso 3: registrar evidencia y validar el resultado; paso 4: notificar y cerrar la actividad. Las alertas tempranas ayudan a identificar degradaciones antes de que afecten a los clientes. Define responsables, puntos de control, criterios de aceptación y acciones de contingencia.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-10",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0510",
+    "titulo": "Procedimiento operativo: Gestión de proyectos ágiles",
+    "tipo": "Procedimiento",
+    "area": "Gestión de Proyectos",
+    "conceptos": [
+      "agilidad",
+      "proyectos",
+      "colaboración",
+      "mejora"
+    ],
+    "contenido": "Este procedimiento describe el flujo de trabajo estandarizado para gestión de proyectos ágiles. Paso 1: verificar los requisitos previos y la solicitud; paso 2: ejecutar los controles vinculados a historias de usuario, retrospectivas, tablero Kanban, sprints y prioridades; paso 3: registrar evidencia y validar el resultado; paso 4: notificar y cerrar la actividad. Los equipos coordinan entregables y revisan avances para mejorar continuamente la entrega. Define responsables, puntos de control, criterios de aceptación y acciones de contingencia.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-11",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0601",
+    "titulo": "Lección aprendida: Gestión de credenciales",
+    "tipo": "Lección aprendida",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "seguridad",
+      "autenticación",
+      "credenciales",
+      "accesos"
+    ],
+    "contenido": "Esta lección aprendida documenta una experiencia de proyecto relacionada con gestión de credenciales. La situación inicial evidenció dificultades durante actividades de autenticación multifactor, contraseñas seguras, acceso privilegiado y gestión de identidad. El análisis de causa raíz permitió identificar oportunidades de prevención. La organización reduce el riesgo de cuentas comprometidas y verifica la identidad antes de autorizar servicios. Se describen acciones correctivas implementadas, resultados observados y recomendaciones reutilizables en proyectos futuros.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-02",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0602",
+    "titulo": "Lección aprendida: Respaldo y recuperación",
+    "tipo": "Lección aprendida",
+    "area": "Infraestructura",
+    "conceptos": [
+      "respaldo",
+      "recuperación",
+      "continuidad",
+      "datos"
+    ],
+    "contenido": "Esta lección aprendida documenta una experiencia de proyecto relacionada con respaldo y recuperación. La situación inicial evidenció dificultades durante actividades de copias de seguridad, retención, almacenamiento redundante y restauración de datos. El análisis de causa raíz permitió identificar oportunidades de prevención. Los equipos protegen la continuidad operativa ante errores, pérdidas o fallas de infraestructura. Se describen acciones correctivas implementadas, resultados observados y recomendaciones reutilizables en proyectos futuros.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-03",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0603",
+    "titulo": "Lección aprendida: Servicios API REST",
+    "tipo": "Lección aprendida",
+    "area": "Desarrollo",
+    "conceptos": [
+      "api",
+      "integración",
+      "desarrollo",
+      "autenticación"
+    ],
+    "contenido": "Esta lección aprendida documenta una experiencia de proyecto relacionada con servicios api rest. La situación inicial evidenció dificultades durante actividades de endpoints HTTP, contratos JSON, autenticación de API y manejo de códigos de error. El análisis de causa raíz permitió identificar oportunidades de prevención. Los módulos de software intercambian datos mediante servicios documentados con versionado y validación. Se describen acciones correctivas implementadas, resultados observados y recomendaciones reutilizables en proyectos futuros.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-04",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0604",
+    "titulo": "Lección aprendida: Despliegue CI/CD",
+    "tipo": "Lección aprendida",
+    "area": "DevOps",
+    "conceptos": [
+      "devops",
+      "despliegue",
+      "pruebas",
+      "automatización"
+    ],
+    "contenido": "Esta lección aprendida documenta una experiencia de proyecto relacionada con despliegue ci/cd. La situación inicial evidenció dificultades durante actividades de integración continua, pruebas automatizadas, pipelines y despliegue a producción. El análisis de causa raíz permitió identificar oportunidades de prevención. El equipo publica nuevas versiones con controles de calidad, aprobación y reversión. Se describen acciones correctivas implementadas, resultados observados y recomendaciones reutilizables en proyectos futuros.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-05",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0605",
+    "titulo": "Lección aprendida: Atención de incidentes",
+    "tipo": "Lección aprendida",
+    "area": "Soporte",
+    "conceptos": [
+      "incidentes",
+      "soporte",
+      "sla",
+      "monitoreo"
+    ],
+    "contenido": "Esta lección aprendida documenta una experiencia de proyecto relacionada con atención de incidentes. La situación inicial evidenció dificultades durante actividades de tickets de servicio, prioridades, escalamiento, tiempos SLA y diagnóstico de fallas. El análisis de causa raíz permitió identificar oportunidades de prevención. La mesa de ayuda restaura servicios afectados y comunica el estado a los usuarios. Se describen acciones correctivas implementadas, resultados observados y recomendaciones reutilizables en proyectos futuros.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-06",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0606",
+    "titulo": "Lección aprendida: Análisis de indicadores",
+    "tipo": "Lección aprendida",
+    "area": "Analítica de Datos",
+    "conceptos": [
+      "datos",
+      "indicadores",
+      "calidad",
+      "analítica"
+    ],
+    "contenido": "Esta lección aprendida documenta una experiencia de proyecto relacionada con análisis de indicadores. La situación inicial evidenció dificultades durante actividades de tableros KPI, indicadores de negocio, limpieza de datos y trazabilidad de métricas. El análisis de causa raíz permitió identificar oportunidades de prevención. Los analistas convierten registros operativos en información para decisiones verificables. Se describen acciones correctivas implementadas, resultados observados y recomendaciones reutilizables en proyectos futuros.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-07",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0607",
+    "titulo": "Lección aprendida: Protección de datos personales",
+    "tipo": "Lección aprendida",
+    "area": "Ciberseguridad",
+    "conceptos": [
+      "privacidad",
+      "seguridad",
+      "datos",
+      "cumplimiento"
+    ],
+    "contenido": "Esta lección aprendida documenta una experiencia de proyecto relacionada con protección de datos personales. La situación inicial evidenció dificultades durante actividades de privacidad, cifrado, consentimiento, acceso mínimo y clasificación de información. El análisis de causa raíz permitió identificar oportunidades de prevención. La organización minimiza la exposición de datos sensibles durante el tratamiento y almacenamiento. Se describen acciones correctivas implementadas, resultados observados y recomendaciones reutilizables en proyectos futuros.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-08",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0608",
+    "titulo": "Lección aprendida: Gestión de versiones",
+    "tipo": "Lección aprendida",
+    "area": "Desarrollo",
+    "conceptos": [
+      "git",
+      "desarrollo",
+      "versionado",
+      "calidad"
+    ],
+    "contenido": "Esta lección aprendida documenta una experiencia de proyecto relacionada con gestión de versiones. La situación inicial evidenció dificultades durante actividades de repositorios Git, ramas de código, revisiones pull request y liberaciones. El análisis de causa raíz permitió identificar oportunidades de prevención. Los desarrolladores conservan trazabilidad de cambios y reducen conflictos al integrar funcionalidades. Se describen acciones correctivas implementadas, resultados observados y recomendaciones reutilizables en proyectos futuros.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-09",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0609",
+    "titulo": "Lección aprendida: Monitoreo de servicios",
+    "tipo": "Lección aprendida",
+    "area": "Infraestructura",
+    "conceptos": [
+      "monitoreo",
+      "infraestructura",
+      "alertas",
+      "disponibilidad"
+    ],
+    "contenido": "Esta lección aprendida documenta una experiencia de proyecto relacionada con monitoreo de servicios. La situación inicial evidenció dificultades durante actividades de métricas de disponibilidad, alertas de servidores, logs y observabilidad. El análisis de causa raíz permitió identificar oportunidades de prevención. Las alertas tempranas ayudan a identificar degradaciones antes de que afecten a los clientes. Se describen acciones correctivas implementadas, resultados observados y recomendaciones reutilizables en proyectos futuros.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-10",
+    "origen": "Corpus ficticio para demostración académica"
+  },
+  {
+    "id": "NX-0610",
+    "titulo": "Lección aprendida: Gestión de proyectos ágiles",
+    "tipo": "Lección aprendida",
+    "area": "Gestión de Proyectos",
+    "conceptos": [
+      "agilidad",
+      "proyectos",
+      "colaboración",
+      "mejora"
+    ],
+    "contenido": "Esta lección aprendida documenta una experiencia de proyecto relacionada con gestión de proyectos ágiles. La situación inicial evidenció dificultades durante actividades de historias de usuario, retrospectivas, tablero Kanban, sprints y prioridades. El análisis de causa raíz permitió identificar oportunidades de prevención. Los equipos coordinan entregables y revisan avances para mejorar continuamente la entrega. Se describen acciones correctivas implementadas, resultados observados y recomendaciones reutilizables en proyectos futuros.",
+    "version": "1.0",
+    "estado": "Vigente",
+    "fecha_actualizacion": "2026-10-11",
+    "origen": "Corpus ficticio para demostración académica"
+  }
+]

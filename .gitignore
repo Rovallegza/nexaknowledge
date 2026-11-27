@@ -19,3 +19,6 @@ __pycache__/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Salida regenerable del script de estructura base
+documentacion/Informe_NexaKnowledge_base.docx

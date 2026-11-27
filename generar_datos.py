@@ -45,6 +45,19 @@ def generar():
  return docs
 
 if __name__=='__main__':
+ # Regenera el corpus base por plantilla, pero conserva los documentos que no
+ # salen de aqui: los reservados (NX-07xx) y cualquier otro anadido despues.
+ # Sin esta mezcla, ejecutar el script borraria el control de acceso.
  ruta=DIR/'datos'/'documentos.json'
- ruta.write_text(json.dumps(generar(),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
- print(f'{len(generar())} documentos generados en {ruta}')
+ base=generar()
+ ids_base={d['id'] for d in base}
+ conservados=[]
+ if ruta.exists():
+  previos=json.loads(ruta.read_text(encoding='utf-8'))
+  conservados=[d for d in previos if d['id'] not in ids_base]
+ final=base+conservados
+ ruta.write_text(json.dumps(final,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+ print(f'{len(base)} documentos base regenerados en {ruta}')
+ if conservados:
+  print(f'{len(conservados)} documentos conservados sin tocar: '
+        + ', '.join(d['id'] for d in conservados))

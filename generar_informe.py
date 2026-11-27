@@ -1,4 +1,15 @@
-"""Informe académico diseñado con python-docx."""
+"""Genera la ESTRUCTURA BASE del informe (fase de avance) en un archivo aparte.
+
+ATENCIÓN: este script NO reproduce el informe final entregado.
+El documento final, documentacion/Informe_NexaKnowledge.docx, incorpora
+secciones y cifras añadidas después de esta fase: 7.7 control de acceso,
+9.6 mejoras revisadas, 9.7 auditoría en producción, las métricas del catálogo
+de 67 documentos y la revisión de coherencia. Esas se mantienen en el propio
+.docx, no aquí.
+
+Por eso la salida va a Informe_NexaKnowledge_base.docx: ejecutarlo nunca
+sobrescribe el entregable.
+"""
 from __future__ import annotations
 from pathlib import Path
 from docx import Document
@@ -12,7 +23,7 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
 ROOT=Path(__file__).resolve().parent
-OUT=ROOT/'documentacion'/'Informe_NexaKnowledge.docx'
+OUT=ROOT/'documentacion'/'Informe_NexaKnowledge_base.docx'
 NAVY='10243A'; TEAL='0D8796'; LIGHT='EAF5F8'; MID='527187'; WHITE='FFFFFF'; SOFT='F3F7FA'; DARK='23344A'
 
 def rgb(x): return RGBColor.from_string(x)
@@ -288,7 +299,7 @@ page()
 # Page 8 architecture and steps
 
 title('7. Implementación del prototipo')
-figure('arquitectura.png','Figura 3. Dos pipelines: recuperación de documentos y clasificación supervisada.',width=6.60)
+figure('arquitectura.png','Figura 3. Arquitectura del prototipo: repositorio de datos, componentes de procesamiento, capa de control de acceso, servicios del motor, interfaz de interacción y salidas al usuario.',width=6.60)
 sub('7.1 Estructura del corpus')
 body('Cada registro JSON tiene los campos id, titulo, tipo, area, conceptos, contenido, version, estado, fecha_actualizacion y origen. Se generaron 10 temas organizacionales por cada uno de los seis tipos de documento: 60 registros en total. El texto indexado combina título, contenido, área y conceptos, mientras el clasificador aprende únicamente a partir del contenido.')
 sub('7.2 Búsqueda: procedimiento implementado')
@@ -386,4 +397,6 @@ props.author='Proyecto académico - NexaSoft Solutions'
 props.comments='Documentos y organización ficticios. Uso académico.'
 OUT.parent.mkdir(parents=True,exist_ok=True)
 doc.save(OUT)
+print('AVISO: esto es la estructura base de la fase de avance, no el informe final.')
+print('El entregable vive en documentacion/Informe_NexaKnowledge.docx y no se ha tocado.')
 print(OUT)
